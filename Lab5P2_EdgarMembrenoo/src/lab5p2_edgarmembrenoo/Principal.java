@@ -57,6 +57,20 @@ public class Principal extends javax.swing.JFrame {
         jd_Tree = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtree = new javax.swing.JTree();
+        a_Entrenador = new javax.swing.JDialog();
+        jLabel11 = new javax.swing.JLabel();
+        nombreEntrenador = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        apellidoEntrenador = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        nacionalidadEntrenador = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jSpinner2 = new javax.swing.JSpinner();
+        jLabel15 = new javax.swing.JLabel();
+        contratoEntrenador = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        copasEntrenador = new javax.swing.JTextField();
+        entrenadorAgregar = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
@@ -209,6 +223,101 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
+        jLabel11.setText("Nombre");
+
+        jLabel12.setText("Apellido");
+
+        jLabel13.setText("Nacionalidad");
+
+        nacionalidadEntrenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nacionalidadEntrenadorActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("Edad");
+
+        jLabel15.setText("Contrato");
+
+        jLabel16.setText("Copas Ganadas");
+
+        entrenadorAgregar.setText("Agregar");
+        entrenadorAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                entrenadorAgregarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout a_EntrenadorLayout = new javax.swing.GroupLayout(a_Entrenador.getContentPane());
+        a_Entrenador.getContentPane().setLayout(a_EntrenadorLayout);
+        a_EntrenadorLayout.setHorizontalGroup(
+            a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(a_EntrenadorLayout.createSequentialGroup()
+                .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(a_EntrenadorLayout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, a_EntrenadorLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(apellidoEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, a_EntrenadorLayout.createSequentialGroup()
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(83, 83, 83)
+                                .addComponent(nombreEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(a_EntrenadorLayout.createSequentialGroup()
+                                .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel15))
+                                .addGap(56, 56, 56)
+                                .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(contratoEntrenador)
+                                    .addComponent(copasEntrenador)
+                                    .addGroup(a_EntrenadorLayout.createSequentialGroup()
+                                        .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(nacionalidadEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                    .addGroup(a_EntrenadorLayout.createSequentialGroup()
+                        .addGap(241, 241, 241)
+                        .addComponent(entrenadorAgregar)))
+                .addContainerGap(293, Short.MAX_VALUE))
+        );
+        a_EntrenadorLayout.setVerticalGroup(
+            a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(a_EntrenadorLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(a_EntrenadorLayout.createSequentialGroup()
+                        .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(nombreEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(apellidoEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(nacionalidadEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel14))
+                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(copasEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addComponent(contratoEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(entrenadorAgregar)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu2.setText("Opciones");
@@ -287,7 +396,12 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_agregar_jugadorActionPerformed
 
     private void agregar_entrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_entrenadorActionPerformed
-        // TODO add your handling code here:
+        a_Entrenador.setModal(true);
+        a_Entrenador.pack();
+        a_Entrenador.setLocationRelativeTo(this);
+        a_Entrenador.setVisible(true);
+
+
     }//GEN-LAST:event_agregar_entrenadorActionPerformed
 
     private void nacionalidadJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nacionalidadJugadorActionPerformed
@@ -335,8 +449,11 @@ public class Principal extends javax.swing.JFrame {
             }
             modeloARBOL.reload();
             JOptionPane.showMessageDialog(this, "Usuario fue Agregado");
+            nombreJugador.setText("");
+            apellidoJugador.setText("");
+            nacionalidadJugador.setText("");
             a_jugador.setVisible(false);
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrio un error");
         }
@@ -351,6 +468,55 @@ public class Principal extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_opcion_arbolActionPerformed
+
+    private void nacionalidadEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nacionalidadEntrenadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nacionalidadEntrenadorActionPerformed
+
+    private void entrenadorAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrenadorAgregarMouseClicked
+        try {
+            String nombre, apellido, nacionalidad;
+            int edad = 0;
+            int contrato = 0;
+            int copas = 0;
+
+            nombre = nombreEntrenador.getText();
+            apellido = apellidoEntrenador.getText();
+            nacionalidad = nacionalidadEntrenador.getText();
+            edad = Integer.parseInt(copasEntrenador.getText());
+            contrato = Integer.parseInt(contratoEntrenador.getText());
+            copas = Integer.parseInt(copasEntrenador.getText());
+
+            entrenador.add(new Entrenadores(nombre, apellido, nacionalidad, edad, contrato, copas));
+
+            DefaultTreeModel modeloARBOL = (DefaultTreeModel) jtree.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            int centinela = -1;
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals(nombre)) {
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Entrenadores(nombre, apellido, nacionalidad, edad, contrato, copas));
+                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                }
+            }
+
+            if (centinela == -1) {
+                DefaultMutableTreeNode n = new DefaultMutableTreeNode("Entrenadores");
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Entrenadores(nombre, apellido, nacionalidad, edad, contrato, copas));
+                n.add(p);
+                raiz.add(n);
+            }
+            modeloARBOL.reload();
+
+            nombreEntrenador.setText("");
+            apellidoEntrenador.setText("");
+            nacionalidadEntrenador.setText("");
+            copasEntrenador.setText("");
+            contratoEntrenador.setText("");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error");
+        }
+
+    }//GEN-LAST:event_entrenadorAgregarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -389,16 +555,27 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agregar_Jugador;
+    private javax.swing.JDialog a_Entrenador;
     private javax.swing.JDialog a_jugador;
     private javax.swing.JMenuItem agregar_entrenador;
     private javax.swing.JMenuItem agregar_jugador;
     private javax.swing.JMenuItem agregar_preparador;
     private javax.swing.JMenuItem agregar_psicologo;
+    private javax.swing.JTextField apellidoEntrenador;
     private javax.swing.JTextField apellidoJugador;
+    private javax.swing.JTextField contratoEntrenador;
     private javax.swing.JTextField contratoJugador;
+    private javax.swing.JTextField copasEntrenador;
     private javax.swing.JTextField copasJugador;
+    private javax.swing.JButton entrenadorAgregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -415,9 +592,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JDialog jd_Tree;
     private javax.swing.JTree jtree;
+    private javax.swing.JTextField nacionalidadEntrenador;
     private javax.swing.JTextField nacionalidadJugador;
+    private javax.swing.JTextField nombreEntrenador;
     private javax.swing.JTextField nombreJugador;
     private javax.swing.JTextField numeroJugador;
     private javax.swing.JMenuItem opcion_arbol;
@@ -426,5 +606,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tarjetasJugador;
     // End of variables declaration//GEN-END:variables
     ArrayList<Jugadores> jugador = new ArrayList();
-
+    ArrayList<Entrenadores> entrenador = new ArrayList();
 }
