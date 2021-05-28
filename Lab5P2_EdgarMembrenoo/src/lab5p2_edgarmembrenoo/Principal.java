@@ -27,21 +27,101 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        a_jugador = new javax.swing.JDialog();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        agregar_jugador = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        agregar_entrenador = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        agregar_preparador = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        agregar_psicologo = new javax.swing.JMenuItem();
+
+        javax.swing.GroupLayout a_jugadorLayout = new javax.swing.GroupLayout(a_jugador.getContentPane());
+        a_jugador.getContentPane().setLayout(a_jugadorLayout);
+        a_jugadorLayout.setHorizontalGroup(
+            a_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        a_jugadorLayout.setVerticalGroup(
+            a_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMenu2.setText("Opciones");
+
+        jMenu1.setText("Jugadores");
+
+        agregar_jugador.setText("Agregar Jugador");
+        agregar_jugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregar_jugadorActionPerformed(evt);
+            }
+        });
+        jMenu1.add(agregar_jugador);
+
+        jMenu2.add(jMenu1);
+
+        jMenu3.setText("Entrenadores");
+
+        agregar_entrenador.setText("Agregar Entrenador");
+        agregar_entrenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregar_entrenadorActionPerformed(evt);
+            }
+        });
+        jMenu3.add(agregar_entrenador);
+
+        jMenu2.add(jMenu3);
+
+        jMenu4.setText("Preparadores");
+
+        agregar_preparador.setText("Agregar Preparadores");
+        jMenu4.add(agregar_preparador);
+
+        jMenu2.add(jMenu4);
+
+        jMenu5.setText("Psicologos");
+
+        agregar_psicologo.setText("Agregar Psicologo");
+        jMenu5.add(agregar_psicologo);
+
+        jMenu2.add(jMenu5);
+
+        jMenuBar2.add(jMenu2);
+
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 591, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 392, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void agregar_jugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_jugadorActionPerformed
+        a_jugador.setModal(true);
+        a_jugador.pack();
+        a_jugador.setLocationRelativeTo(this);
+        a_jugador.setVisible(true);
+        
+        
+    }//GEN-LAST:event_agregar_jugadorActionPerformed
+
+    private void agregar_entrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_entrenadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregar_entrenadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +159,16 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog a_jugador;
+    private javax.swing.JMenuItem agregar_entrenador;
+    private javax.swing.JMenuItem agregar_jugador;
+    private javax.swing.JMenuItem agregar_preparador;
+    private javax.swing.JMenuItem agregar_psicologo;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuBar jMenuBar2;
     // End of variables declaration//GEN-END:variables
 }
