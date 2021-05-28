@@ -6,6 +6,7 @@
 package lab5p2_edgarmembrenoo;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -67,6 +68,8 @@ public class Principal extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         agregar_psicologo = new javax.swing.JMenuItem();
         opcion_arbol = new javax.swing.JMenuItem();
+
+        a_jugador.setTitle("Agregar Jugador");
 
         jLabel1.setText("Nombre");
 
@@ -147,9 +150,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(apellidoJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(a_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(nacionalidadJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(a_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nacionalidadJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(a_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -183,7 +186,9 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        jd_Tree.setTitle("Arbol");
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Personas");
         jtree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(jtree);
 
@@ -193,8 +198,8 @@ public class Principal extends javax.swing.JFrame {
             jd_TreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_TreeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(501, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(314, Short.MAX_VALUE))
         );
         jd_TreeLayout.setVerticalGroup(
             jd_TreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,32 +295,51 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_nacionalidadJugadorActionPerformed
 
     private void Agregar_JugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Agregar_JugadorMouseClicked
-        String nombre, apellido, nacionalidad;
-        int edad, numerocami;
-        int partidos = 0;
-        int copas = 0;
-        int tarjetasRoj = 0;
-        int tarAmarilla = 0;
-        int contrato = 0;
+        try {
+            String nombre, apellido, nacionalidad;
+            int edad, numerocami;
+            int partidos = 0;
+            int copas = 0;
+            int tarjetasRoj = 0;
+            int tarAmarilla = 0;
+            int contrato = 0;
 
-        nombre = nombreJugador.getText();
-        apellido = apellidoJugador.getText();
-        nacionalidad = nacionalidadJugador.getText();
-        edad = (Integer) jSpinner1.getValue();
-        numerocami = Integer.parseInt(numeroJugador.getText());
-        partidos = Integer.parseInt(partidosJugador.getText());
-        copas = Integer.parseInt(copasJugador.getText());
-        tarjetasRoj = Integer.parseInt(tarjetasJugador.getText());
-        tarAmarilla = Integer.parseInt(tarjetasAmarillas.getText());
-        contrato = Integer.parseInt(contratoJugador.getText());
-        
-        jugador.add(new Jugadores(nombre, apellido, edad, numerocami, partidos, copas, tarjetasRoj, tarAmarilla, contrato, nacionalidad));
-        
-        DefaultTreeModel m = (DefaultTreeModel) jtree.getModel();
-        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
-        DefaultMutableTreeNode nodo_jugador;
-        nodo_jugador = new DefaultMutableTreeNode(new Jugadores());
+            nombre = nombreJugador.getText();
+            apellido = apellidoJugador.getText();
+            nacionalidad = nacionalidadJugador.getText();
+            edad = (Integer) jSpinner1.getValue();
+            numerocami = Integer.parseInt(numeroJugador.getText());
+            partidos = Integer.parseInt(partidosJugador.getText());
+            copas = Integer.parseInt(copasJugador.getText());
+            tarjetasRoj = Integer.parseInt(tarjetasJugador.getText());
+            tarAmarilla = Integer.parseInt(tarjetasAmarillas.getText());
+            contrato = Integer.parseInt(contratoJugador.getText());
 
+            jugador.add(new Jugadores(nombre, apellido, edad, numerocami, partidos, copas, tarjetasRoj, tarAmarilla, contrato, nacionalidad));
+
+            DefaultTreeModel modeloARBOL = (DefaultTreeModel) jtree.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            int centinela = -1;
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals(nombre)) {
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Jugadores(nombre, apellido, edad, numerocami, partidos, copas, tarjetasRoj, tarjetasRoj, contrato, nacionalidad));
+                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                }
+            }
+
+            if (centinela == -1) {
+                DefaultMutableTreeNode n = new DefaultMutableTreeNode("Jugadores");
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Jugadores(nombre, apellido, edad, numerocami, partidos, copas, tarjetasRoj, tarjetasRoj, contrato, nacionalidad));
+                n.add(p);
+                raiz.add(n);
+            }
+            modeloARBOL.reload();
+            JOptionPane.showMessageDialog(this, "Usuario fue Agregado");
+            a_jugador.setVisible(false);
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error");
+        }
     }//GEN-LAST:event_Agregar_JugadorMouseClicked
 
     private void opcion_arbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion_arbolActionPerformed
@@ -323,8 +347,9 @@ public class Principal extends javax.swing.JFrame {
         jd_Tree.pack();
         jd_Tree.setLocationRelativeTo(this);
         jd_Tree.setVisible(true);
-        
-        
+        jd_Tree.setVisible(false);
+
+
     }//GEN-LAST:event_opcion_arbolActionPerformed
 
     /**
