@@ -71,6 +71,50 @@ public class Principal extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         copasEntrenador = new javax.swing.JTextField();
         entrenadorAgregar = new javax.swing.JButton();
+        a_preparadores = new javax.swing.JDialog();
+        jLabel18 = new javax.swing.JLabel();
+        nombrePreparador = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        apellidoPrepa = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        nacionalidadPrepa = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        contratoPrepa = new javax.swing.JTextField();
+        edadPrepa = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        id_Prepa = new javax.swing.JTextField();
+        especialidadPrepa = new javax.swing.JTextField();
+        Titulo_Prepa = new javax.swing.JTextField();
+        agregar_prepa = new javax.swing.JButton();
+        a_psicologo = new javax.swing.JDialog();
+        jLabel27 = new javax.swing.JLabel();
+        nombrePsico = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        apellidoPsico = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        nacionalidadPsico = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        contratoPsico = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        edadPsico = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        id_Psico = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        especialidadPsico = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        Titulo_Psico = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jugadores_Psico = new javax.swing.JTextField();
+        a_psico = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        InformesGene = new javax.swing.JTextField();
+        menuPop = new javax.swing.JPopupMenu();
+        eliminar = new javax.swing.JMenuItem();
+        modificar = new javax.swing.JMenuItem();
+        jLabel17 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
@@ -140,7 +184,6 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(a_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Agregar_Jugador)
                     .addGroup(a_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(apellidoJugador, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                         .addComponent(nombreJugador)
                         .addComponent(nacionalidadJugador)
@@ -149,7 +192,8 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(copasJugador)
                         .addComponent(tarjetasJugador)
                         .addComponent(tarjetasAmarillas)
-                        .addComponent(contratoJugador)))
+                        .addComponent(contratoJugador)
+                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(287, Short.MAX_VALUE))
         );
         a_jugadorLayout.setVerticalGroup(
@@ -204,6 +248,11 @@ public class Principal extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Personas");
         jtree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jtree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtreeMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jtree);
 
         javax.swing.GroupLayout jd_TreeLayout = new javax.swing.GroupLayout(jd_Tree.getContentPane());
@@ -276,10 +325,9 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(contratoEntrenador)
                                     .addComponent(copasEntrenador)
                                     .addGroup(a_EntrenadorLayout.createSequentialGroup()
-                                        .addGroup(a_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(nacionalidadEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                                        .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(nacionalidadEntrenador)))))
                     .addGroup(a_EntrenadorLayout.createSequentialGroup()
                         .addGap(241, 241, 241)
                         .addComponent(entrenadorAgregar)))
@@ -318,7 +366,241 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
+        jLabel18.setText("Nombre");
+
+        jLabel19.setText("Apellido");
+
+        jLabel20.setText("Nacionalidad");
+
+        nacionalidadPrepa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nacionalidadPrepaActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Contrato");
+
+        jLabel22.setText("Edad");
+
+        jLabel23.setText("ID");
+
+        jLabel24.setText("Especialidad");
+
+        jLabel25.setText("Titulo");
+
+        agregar_prepa.setText("Agregar");
+        agregar_prepa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregar_prepaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout a_preparadoresLayout = new javax.swing.GroupLayout(a_preparadores.getContentPane());
+        a_preparadores.getContentPane().setLayout(a_preparadoresLayout);
+        a_preparadoresLayout.setHorizontalGroup(
+            a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(a_preparadoresLayout.createSequentialGroup()
+                .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(a_preparadoresLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel25)
+                            .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel19)
+                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(a_preparadoresLayout.createSequentialGroup()
+                                .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23))
+                                .addGap(9, 9, 9))
+                            .addComponent(jLabel24))
+                        .addGap(56, 56, 56)
+                        .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nombrePreparador, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                            .addComponent(apellidoPrepa, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                            .addComponent(nacionalidadPrepa)
+                            .addComponent(contratoPrepa)
+                            .addComponent(edadPrepa)
+                            .addComponent(id_Prepa)
+                            .addComponent(especialidadPrepa)
+                            .addComponent(Titulo_Prepa)))
+                    .addGroup(a_preparadoresLayout.createSequentialGroup()
+                        .addGap(259, 259, 259)
+                        .addComponent(agregar_prepa)))
+                .addContainerGap(286, Short.MAX_VALUE))
+        );
+        a_preparadoresLayout.setVerticalGroup(
+            a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(a_preparadoresLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(nombrePreparador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(apellidoPrepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20)
+                    .addComponent(nacionalidadPrepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(contratoPrepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addGap(31, 31, 31)
+                .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(edadPrepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addGap(18, 18, 18)
+                .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(id_Prepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(a_preparadoresLayout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, a_preparadoresLayout.createSequentialGroup()
+                        .addComponent(especialidadPrepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(a_preparadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25)
+                    .addComponent(Titulo_Prepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(agregar_prepa)
+                .addGap(45, 45, 45))
+        );
+
+        jLabel27.setText("Nombre");
+
+        jLabel28.setText("Apellido");
+
+        jLabel29.setText("Nacionalidad");
+
+        nacionalidadPsico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nacionalidadPsicoActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setText("Contrato");
+
+        jLabel31.setText("Edad");
+
+        jLabel32.setText("ID");
+
+        jLabel33.setText("Especialidad");
+
+        jLabel34.setText("Titulo");
+
+        jLabel35.setText("Jugadores Atendidos");
+
+        a_psico.setText("Agregar");
+        a_psico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                a_psicoMouseClicked(evt);
+            }
+        });
+
+        jLabel26.setText("Informes ");
+
+        javax.swing.GroupLayout a_psicologoLayout = new javax.swing.GroupLayout(a_psicologo.getContentPane());
+        a_psicologo.getContentPane().setLayout(a_psicologoLayout);
+        a_psicologoLayout.setHorizontalGroup(
+            a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(a_psicologoLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel28)
+                        .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(a_psicologoLayout.createSequentialGroup()
+                        .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel31)
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel33)
+                            .addComponent(jLabel34)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel26))
+                        .addGap(9, 9, 9)))
+                .addGap(51, 51, 51)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(a_psico)
+                    .addComponent(nombrePsico)
+                    .addComponent(apellidoPsico)
+                    .addComponent(nacionalidadPsico)
+                    .addComponent(contratoPsico, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                    .addComponent(edadPsico)
+                    .addComponent(id_Psico)
+                    .addComponent(especialidadPsico)
+                    .addComponent(Titulo_Psico)
+                    .addComponent(jugadores_Psico)
+                    .addComponent(InformesGene))
+                .addContainerGap(330, Short.MAX_VALUE))
+        );
+        a_psicologoLayout.setVerticalGroup(
+            a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(a_psicologoLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(nombrePsico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(apellidoPsico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel29)
+                    .addComponent(nacionalidadPsico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(contratoPsico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30))
+                .addGap(22, 22, 22)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(edadPsico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(id_Psico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel33)
+                    .addComponent(especialidadPsico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel34)
+                    .addComponent(Titulo_Psico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel35)
+                    .addComponent(jugadores_Psico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(a_psicologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(InformesGene, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(a_psico)
+                .addGap(35, 35, 35))
+        );
+
+        eliminar.setText("jMenuItem1");
+        menuPop.add(eliminar);
+
+        modificar.setText("jMenuItem2");
+        menuPop.add(modificar);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel17.setFont(new java.awt.Font("Monospaced", 3, 18)); // NOI18N
+        jLabel17.setText("Menu De Opciones");
 
         jMenu2.setText("Opciones");
 
@@ -349,6 +631,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu4.setText("Preparadores");
 
         agregar_preparador.setText("Agregar Preparadores");
+        agregar_preparador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregar_preparadorActionPerformed(evt);
+            }
+        });
         jMenu4.add(agregar_preparador);
 
         jMenu2.add(jMenu4);
@@ -356,6 +643,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu5.setText("Psicologos");
 
         agregar_psicologo.setText("Agregar Psicologo");
+        agregar_psicologo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregar_psicologoActionPerformed(evt);
+            }
+        });
         jMenu5.add(agregar_psicologo);
 
         jMenu2.add(jMenu5);
@@ -376,11 +668,17 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 591, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(193, 193, 193)
+                .addComponent(jLabel17)
+                .addContainerGap(222, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 392, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel17)
+                .addContainerGap(349, Short.MAX_VALUE))
         );
 
         pack();
@@ -512,11 +810,145 @@ public class Principal extends javax.swing.JFrame {
             nacionalidadEntrenador.setText("");
             copasEntrenador.setText("");
             contratoEntrenador.setText("");
+            a_Entrenador.setVisible(false);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrio un error");
         }
 
     }//GEN-LAST:event_entrenadorAgregarMouseClicked
+
+    private void nacionalidadPrepaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nacionalidadPrepaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nacionalidadPrepaActionPerformed
+
+    private void agregar_prepaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_prepaMouseClicked
+        try {
+            String nombre, apellido, nacionalidad, especialidad, titulo;
+            int id;
+            int edad;
+            int contrato = 0;
+
+            nombre = nombrePreparador.getText();
+            apellido = apellidoPrepa.getText();
+            nacionalidad = nacionalidadPrepa.getText();
+            titulo = Titulo_Prepa.getText();
+            especialidad = especialidadPrepa.getText();
+            id = Integer.parseInt(id_Prepa.getText());
+            edad = Integer.parseInt(edadPrepa.getText());
+            contrato = Integer.parseInt(contratoPrepa.getText());
+
+            prepa.add(new Preparadores(nombre, apellido, nacionalidad, id, edad, contrato, especialidad, titulo));
+
+            DefaultTreeModel modeloARBOL = (DefaultTreeModel) jtree.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            int centinela = -1;
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals(nombre)) {
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Preparadores(nombre, apellido, nacionalidad, id, edad, contrato, especialidad, titulo));
+                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                }
+            }
+
+            if (centinela == -1) {
+                DefaultMutableTreeNode n = new DefaultMutableTreeNode("Preparadores");
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Preparadores(nombre, apellido, nacionalidad, id, edad, contrato, especialidad, titulo));
+                n.add(p);
+                raiz.add(n);
+            }
+            modeloARBOL.reload();
+            nombrePreparador.setText("");
+            apellidoPrepa.setText("");
+            nacionalidadPrepa.setText("");
+            Titulo_Prepa.setText("");
+            especialidadPrepa.setText("");
+            id_Prepa.setText("");
+            edadPrepa.setText("");
+            contratoPrepa.getText();
+            a_preparadores.setVisible(false);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error");
+        }
+    }//GEN-LAST:event_agregar_prepaMouseClicked
+
+    private void agregar_preparadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_preparadorActionPerformed
+        a_preparadores.setModal(true);
+        a_preparadores.pack();
+        a_preparadores.setLocationRelativeTo(this);
+        a_preparadores.setVisible(true);
+        a_preparadores.setVisible(false);
+
+
+    }//GEN-LAST:event_agregar_preparadorActionPerformed
+
+    private void agregar_psicologoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_psicologoActionPerformed
+        a_psicologo.setModal(true);
+        a_psicologo.pack();
+        a_psicologo.setLocationRelativeTo(this);
+        a_psicologo.setVisible(true);
+        a_psicologo.setVisible(false);
+
+
+    }//GEN-LAST:event_agregar_psicologoActionPerformed
+
+    private void nacionalidadPsicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nacionalidadPsicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nacionalidadPsicoActionPerformed
+
+    private void a_psicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a_psicoMouseClicked
+        try {
+            String nombre, apellido, nacionalidad, titulo, especialidad;
+            int edad, id, informes, jugaAten;
+
+            nombre = nombrePsico.getText();
+            apellido = apellidoPsico.getText();
+            nacionalidad = nacionalidadPsico.getText();
+            titulo = Titulo_Psico.getText();
+            especialidad = especialidadPsico.getText();
+            edad = Integer.parseInt(edadPsico.getText());
+            id = Integer.parseInt(id_Psico.getText());
+            informes = Integer.parseInt(InformesGene.getText());
+            jugaAten = Integer.parseInt(jugadores_Psico.getText());
+
+            psicolo.add(new Psicologo(nombre, apellido, nacionalidad, edad, titulo, id, especialidad, informes, jugaAten));
+
+            DefaultTreeModel modeloARBOL = (DefaultTreeModel) jtree.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            int centinela = -1;
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals(nombre)) {
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Psicologo(nombre, apellido, nacionalidad, edad, titulo, id, especialidad, informes, jugaAten));
+                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                }
+            }
+
+            if (centinela == -1) {
+                DefaultMutableTreeNode n = new DefaultMutableTreeNode("Psicologo");
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Psicologo(nombre, apellido, nacionalidad, edad, titulo, id, especialidad, informes, jugaAten));
+                n.add(p);
+                raiz.add(n);
+            }
+            modeloARBOL.reload();
+
+            nombrePsico.setText("");
+            apellidoPsico.setText("");
+            nacionalidadPsico.setText("");
+            Titulo_Psico.setText("");
+            especialidadPsico.setText("");
+            id_Psico.setText("");
+            InformesGene.setText("");
+            jugadores_Psico.setText("");
+            a_psicologo.setVisible(false);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error");
+        }
+
+    }//GEN-LAST:event_a_psicoMouseClicked
+
+    private void jtreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtreeMouseClicked
+        // TODO add your handling code her
+e:
+    }//GEN-LAST:event_jtreeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -555,19 +987,37 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agregar_Jugador;
+    private javax.swing.JTextField InformesGene;
+    private javax.swing.JTextField Titulo_Prepa;
+    private javax.swing.JTextField Titulo_Psico;
     private javax.swing.JDialog a_Entrenador;
     private javax.swing.JDialog a_jugador;
+    private javax.swing.JDialog a_preparadores;
+    private javax.swing.JButton a_psico;
+    private javax.swing.JDialog a_psicologo;
     private javax.swing.JMenuItem agregar_entrenador;
     private javax.swing.JMenuItem agregar_jugador;
+    private javax.swing.JButton agregar_prepa;
     private javax.swing.JMenuItem agregar_preparador;
     private javax.swing.JMenuItem agregar_psicologo;
     private javax.swing.JTextField apellidoEntrenador;
     private javax.swing.JTextField apellidoJugador;
+    private javax.swing.JTextField apellidoPrepa;
+    private javax.swing.JTextField apellidoPsico;
     private javax.swing.JTextField contratoEntrenador;
     private javax.swing.JTextField contratoJugador;
+    private javax.swing.JTextField contratoPrepa;
+    private javax.swing.JTextField contratoPsico;
     private javax.swing.JTextField copasEntrenador;
     private javax.swing.JTextField copasJugador;
+    private javax.swing.JTextField edadPrepa;
+    private javax.swing.JTextField edadPsico;
+    private javax.swing.JMenuItem eliminar;
     private javax.swing.JButton entrenadorAgregar;
+    private javax.swing.JTextField especialidadPrepa;
+    private javax.swing.JTextField especialidadPsico;
+    private javax.swing.JTextField id_Prepa;
+    private javax.swing.JTextField id_Psico;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -576,8 +1026,27 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -595,10 +1064,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JDialog jd_Tree;
     private javax.swing.JTree jtree;
+    private javax.swing.JTextField jugadores_Psico;
+    private javax.swing.JPopupMenu menuPop;
+    private javax.swing.JMenuItem modificar;
     private javax.swing.JTextField nacionalidadEntrenador;
     private javax.swing.JTextField nacionalidadJugador;
+    private javax.swing.JTextField nacionalidadPrepa;
+    private javax.swing.JTextField nacionalidadPsico;
     private javax.swing.JTextField nombreEntrenador;
     private javax.swing.JTextField nombreJugador;
+    private javax.swing.JTextField nombrePreparador;
+    private javax.swing.JTextField nombrePsico;
     private javax.swing.JTextField numeroJugador;
     private javax.swing.JMenuItem opcion_arbol;
     private javax.swing.JTextField partidosJugador;
@@ -606,5 +1082,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tarjetasJugador;
     // End of variables declaration//GEN-END:variables
     ArrayList<Jugadores> jugador = new ArrayList();
+    ArrayList<Preparadores> prepa = new ArrayList();
     ArrayList<Entrenadores> entrenador = new ArrayList();
+    ArrayList<Psicologo> psicolo = new ArrayList();
 }
