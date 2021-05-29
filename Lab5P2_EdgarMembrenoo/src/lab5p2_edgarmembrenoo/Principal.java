@@ -114,6 +114,7 @@ public class Principal extends javax.swing.JFrame {
         menuPop = new javax.swing.JPopupMenu();
         eliminar = new javax.swing.JMenuItem();
         modificar = new javax.swing.JMenuItem();
+        Listar = new javax.swing.JMenuItem();
         jLabel17 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
@@ -591,11 +592,19 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(35, 35, 35))
         );
 
-        eliminar.setText("jMenuItem1");
+        eliminar.setText("Eliminar");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
         menuPop.add(eliminar);
 
-        modificar.setText("jMenuItem2");
+        modificar.setText("Modificar");
         menuPop.add(modificar);
+
+        Listar.setText("Listar");
+        menuPop.add(Listar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -946,9 +955,35 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_a_psicoMouseClicked
 
     private void jtreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtreeMouseClicked
-        // TODO add your handling code her
-e:
+        if (evt.isMetaDown()) {
+            int row = jtree.getClosestRowForLocation(evt.getX(), evt.getY());
+            jtree.setSelectionRow(row);
+            Object v1 = jtree.getSelectionPath().getLastPathComponent();
+            nodo_seleccionado = (DefaultMutableTreeNode) v1;
+
+            if (nodo_seleccionado.getUserObject() instanceof Jugadores) {
+                juga_selec = (Jugadores) nodo_seleccionado.getUserObject();
+                menuPop.show(evt.getComponent(), evt.getX(), evt.getY());
+            } else if (nodo_seleccionado.getUserObject() instanceof Entrenadores) {
+                entre_selec = (Entrenadores) nodo_seleccionado.getUserObject();
+                menuPop.show(evt.getComponent(), evt.getX(), evt.getY());
+
+            } else if (nodo_seleccionado.getUserObject() instanceof Preparadores) {
+                prepa_selec = (Preparadores) nodo_seleccionado.getUserObject();
+                menuPop.show(evt.getComponent(), evt.getX(), evt.getY());
+                
+            } else if (nodo_seleccionado.getUserObject() instanceof Psicologo) {
+                psico_selec = (Psicologo) nodo_seleccionado.getUserObject();
+                menuPop.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        }
     }//GEN-LAST:event_jtreeMouseClicked
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        DefaultTreeModel m = (DefaultTreeModel) jtree.getModel();
+        m.removeNodeFromParent(nodo_seleccionado);
+        m.reload();
+    }//GEN-LAST:event_eliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -988,6 +1023,7 @@ e:
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agregar_Jugador;
     private javax.swing.JTextField InformesGene;
+    private javax.swing.JMenuItem Listar;
     private javax.swing.JTextField Titulo_Prepa;
     private javax.swing.JTextField Titulo_Psico;
     private javax.swing.JDialog a_Entrenador;
@@ -1085,4 +1121,9 @@ e:
     ArrayList<Preparadores> prepa = new ArrayList();
     ArrayList<Entrenadores> entrenador = new ArrayList();
     ArrayList<Psicologo> psicolo = new ArrayList();
+    DefaultMutableTreeNode nodo_seleccionado;
+    Jugadores juga_selec;
+    Entrenadores entre_selec;
+    Preparadores prepa_selec;
+    Psicologo psico_selec;
 }
